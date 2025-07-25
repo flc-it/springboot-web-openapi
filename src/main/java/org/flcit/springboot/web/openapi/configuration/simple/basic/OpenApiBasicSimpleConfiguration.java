@@ -28,6 +28,7 @@ import org.flcit.springboot.web.openapi.customiser.BasicAuthentificationOpenApiC
  * 
  * @since 
  * @author Florian Lestic
+ * @deprecated
  */
 @Deprecated
 public class OpenApiBasicSimpleConfiguration extends BaseOpenApiSimpleConfiguration {

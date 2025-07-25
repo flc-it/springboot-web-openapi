@@ -25,12 +25,10 @@ import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 
 /**
- * @deprecated Basic Authentification mode will be removed in a future version
- */
-/**
  * 
  * @since 
  * @author Florian Lestic
+ * @deprecated Basic Authentification mode will be removed in a future version
  */
 @Deprecated
 public class BasicAuthentificationOpenApiCustomiser implements OpenApiCustomiser {

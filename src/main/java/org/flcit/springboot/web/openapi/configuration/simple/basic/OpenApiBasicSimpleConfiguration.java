@@ -16,10 +16,10 @@
 
 package org.flcit.springboot.web.openapi.configuration.simple.basic;
 
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 
 import org.flcit.springboot.web.openapi.configuration.simple.BaseOpenApiSimpleConfiguration;
-import org.flcit.springboot.web.openapi.customiser.BasicAuthentificationOpenApiCustomiser;
+import org.flcit.springboot.web.openapi.customizer.BasicAuthentificationOpenApiCustomizer;
 
 /**
  * @deprecated Basic Authentification mode will be removed in a future version
@@ -49,8 +49,8 @@ public class OpenApiBasicSimpleConfiguration extends BaseOpenApiSimpleConfigurat
      *
      */
     @Override
-    public OpenApiCustomiser getAuthenficationCustomiser(String[] groupes) {
-        return new BasicAuthentificationOpenApiCustomiser(groupes);
+    public OpenApiCustomizer getAuthenficationCustomizer(String[] groupes) {
+        return new BasicAuthentificationOpenApiCustomizer(groupes);
     }
 
 }

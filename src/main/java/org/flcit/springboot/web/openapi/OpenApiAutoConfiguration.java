@@ -23,7 +23,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.env.EnvironmentPostProcessor;
+import org.springframework.boot.EnvironmentPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -41,7 +41,6 @@ import org.flcit.springboot.web.openapi.configuration.simple.oauth2.OpenApiOauth
  * @since 
  * @author Florian Lestic
  */
-@SuppressWarnings("deprecation")
 @AutoConfiguration
 public class OpenApiAutoConfiguration implements EnvironmentPostProcessor {
 

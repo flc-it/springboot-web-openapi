@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.flcit.springboot.web.openapi.customiser;
+package org.flcit.springboot.web.openapi.customizer;
 
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.util.ObjectUtils;
 
 import org.flcit.commons.core.util.StringUtils;
@@ -31,14 +31,14 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
  * @deprecated Basic Authentification mode will be removed in a future version
  */
 @Deprecated
-public class BasicAuthentificationOpenApiCustomiser implements OpenApiCustomiser {
+public class BasicAuthentificationOpenApiCustomizer implements OpenApiCustomizer {
 
     private final String[] groupes;
 
     /**
      * @param groupes
      */
-    public BasicAuthentificationOpenApiCustomiser(String... groupes) {
+    public BasicAuthentificationOpenApiCustomizer(String... groupes) {
         this.groupes = groupes;
     }
 

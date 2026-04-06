@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.flcit.springboot.web.openapi.customiser;
+package org.flcit.springboot.web.openapi.customizer;
 
 import java.util.Arrays;
 
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.util.ObjectUtils;
 
@@ -35,7 +35,7 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
  * @since 
  * @author Florian Lestic
  */
-public class Oauth2ClientCredentialsOpenApiCustomiser implements OpenApiCustomiser {
+public class Oauth2ClientCredentialsOpenApiCustomizer implements OpenApiCustomizer {
 
     private final String tokenUrl;
     private final String[] roles;
@@ -44,10 +44,10 @@ public class Oauth2ClientCredentialsOpenApiCustomiser implements OpenApiCustomis
      * @param tokenUrl
      * @param authorities
      */
-    public Oauth2ClientCredentialsOpenApiCustomiser(String tokenUrl, GrantedAuthority... authorities) {
+    public Oauth2ClientCredentialsOpenApiCustomizer(String tokenUrl, GrantedAuthority... authorities) {
         this(tokenUrl,
                 Arrays.stream(authorities)
-                .map(Oauth2ClientCredentialsOpenApiCustomiser::getAuthority)
+                .map(Oauth2ClientCredentialsOpenApiCustomizer::getAuthority)
                 .toArray(String[]::new)
         );
     }
@@ -60,7 +60,7 @@ public class Oauth2ClientCredentialsOpenApiCustomiser implements OpenApiCustomis
      * @param tokenUrl
      * @param roles
      */
-    public Oauth2ClientCredentialsOpenApiCustomiser(String tokenUrl, String... roles) {
+    public Oauth2ClientCredentialsOpenApiCustomizer(String tokenUrl, String... roles) {
         this.tokenUrl = tokenUrl;
         this.roles = roles;
     }

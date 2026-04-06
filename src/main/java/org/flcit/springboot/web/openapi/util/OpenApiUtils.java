@@ -19,7 +19,7 @@ package org.flcit.springboot.web.openapi.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 
 import io.swagger.v3.core.converter.ModelConverters;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -107,13 +107,13 @@ public final class OpenApiUtils {
     }
 
     /**
-     * @param openApiCustomisers
+     * @param openApiCustomizers
      * @return
      */
-    public static final OpenApiCustomiser openApiCustomiser(OpenApiCustomiser... openApiCustomisers) {
+    public static final OpenApiCustomizer openApiCustomizer(OpenApiCustomizer... openApiCustomizers) {
         return openApi -> {
-            for (OpenApiCustomiser openApiCustomiser: openApiCustomisers) {
-                openApiCustomiser.customise(openApi);
+            for (OpenApiCustomizer openApiCustomizer: openApiCustomizers) {
+                openApiCustomizer.customise(openApi);
             }
         };
     }

@@ -19,8 +19,8 @@ package org.flcit.springboot.web.openapi.configuration;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-import org.springdoc.core.SpringDocUtils;
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
+import org.springdoc.core.utils.SpringDocUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.context.request.async.WebAsyncTask;
 
@@ -57,8 +57,8 @@ public abstract class BaseOpenApiConfiguration extends OpenAPI {
     public abstract boolean isOnlyDocs();
 
     @SafeVarargs
-    protected static final OpenApiCustomiser globalResponses(boolean secured, Consumer<Operation>... consumers) {
-        return new OpenApiCustomiser() {
+    protected static final OpenApiCustomizer globalResponses(boolean secured, Consumer<Operation>... consumers) {
+        return new OpenApiCustomizer() {
             @SuppressWarnings("rawtypes")
             @Override
             public void customise(OpenAPI openApi) {

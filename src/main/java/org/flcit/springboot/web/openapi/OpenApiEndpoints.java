@@ -17,7 +17,7 @@
 package org.flcit.springboot.web.openapi;
 
 import org.springframework.http.HttpMethod;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
 /**
@@ -34,7 +34,7 @@ public final class OpenApiEndpoints {
      */
     public static RequestMatcher[] toApiDocsEndpoint() {
         return new RequestMatcher[] {
-                new AntPathRequestMatcher("/v3/api-docs/**", HttpMethod.GET.toString())
+                PathPatternRequestMatcher.withDefaults().matcher(HttpMethod.GET, "/v3/api-docs/**")
         };
     }
 
@@ -43,9 +43,9 @@ public final class OpenApiEndpoints {
      */
     public static RequestMatcher[] toAnyEndpoints() {
         return new RequestMatcher[] {
-                new AntPathRequestMatcher("/swagger-ui.html", HttpMethod.GET.toString()),
-                new AntPathRequestMatcher("/swagger-ui/**", HttpMethod.GET.toString()),
-                new AntPathRequestMatcher("/v3/api-docs/**", HttpMethod.GET.toString())
+                PathPatternRequestMatcher.withDefaults().matcher(HttpMethod.GET, "/swagger-ui.html"),
+                PathPatternRequestMatcher.withDefaults().matcher(HttpMethod.GET, "/swagger-ui/**"),
+                PathPatternRequestMatcher.withDefaults().matcher(HttpMethod.GET, "/v3/api-docs/**")
         };
     }
 

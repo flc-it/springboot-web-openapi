@@ -20,8 +20,8 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-import org.springdoc.core.GroupedOpenApi;
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 
 import org.flcit.springboot.web.openapi.configuration.BaseOpenApiConfiguration;
@@ -76,7 +76,7 @@ public abstract class BaseOpenApiSimpleConfiguration extends BaseOpenApiConfigur
         return GroupedOpenApi.builder()
                 .group("1-API-User")
                 .pathsToMatch("/api/**")
-                .addOpenApiCustomiser(OpenApiUtils.openApiCustomiser(getAuthenficationCustomiser(userGroupes), globalResponses(true, getCustomUserConsumersOperation())))
+                .addOpenApiCustomizer(OpenApiUtils.openApiCustomizer(getAuthenficationCustomizer(userGroupes), globalResponses(true, getCustomUserConsumersOperation())))
                 .build();
     }
 
@@ -88,7 +88,7 @@ public abstract class BaseOpenApiSimpleConfiguration extends BaseOpenApiConfigur
         return GroupedOpenApi.builder()
                 .group("2-API-Admin")
                 .pathsToMatch("/actuator/*")
-                .addOpenApiCustomiser(OpenApiUtils.openApiCustomiser(getAuthenficationCustomiser(adminGroupes), globalResponses(true, getCustomAdminConsumersOperation())))
+                .addOpenApiCustomizer(OpenApiUtils.openApiCustomizer(getAuthenficationCustomizer(adminGroupes), globalResponses(true, getCustomAdminConsumersOperation())))
                 .build();
     }
 
@@ -96,7 +96,7 @@ public abstract class BaseOpenApiSimpleConfiguration extends BaseOpenApiConfigur
      * @param groupes
      * @return
      */
-    public abstract OpenApiCustomiser getAuthenficationCustomiser(String[] groupes);
+    public abstract OpenApiCustomizer getAuthenficationCustomizer(String[] groupes);
 
     /**
      * @return

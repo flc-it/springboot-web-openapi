@@ -18,10 +18,10 @@ package org.flcit.springboot.web.openapi.configuration.simple.oauth2;
 
 import java.util.Objects;
 
-import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 
 import org.flcit.springboot.web.openapi.configuration.simple.BaseOpenApiSimpleConfiguration;
-import org.flcit.springboot.web.openapi.customiser.Oauth2ClientCredentialsOpenApiCustomiser;
+import org.flcit.springboot.web.openapi.customizer.Oauth2ClientCredentialsOpenApiCustomizer;
 
 /**
  * 
@@ -55,8 +55,8 @@ public class OpenApiOauth2SimpleConfiguration extends BaseOpenApiSimpleConfigura
      *
      */
     @Override
-    public OpenApiCustomiser getAuthenficationCustomiser(String[] groupes) {
-        return new Oauth2ClientCredentialsOpenApiCustomiser(tokenUrl, groupes);
+    public OpenApiCustomizer getAuthenficationCustomizer(String[] groupes) {
+        return new Oauth2ClientCredentialsOpenApiCustomizer(tokenUrl, groupes);
     }
 
     @Override

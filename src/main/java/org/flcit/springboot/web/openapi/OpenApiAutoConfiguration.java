@@ -41,7 +41,6 @@ import org.flcit.springboot.web.openapi.configuration.simple.oauth2.OpenApiOauth
  * @since 
  * @author Florian Lestic
  */
-@SuppressWarnings("deprecation")
 @AutoConfiguration
 public class OpenApiAutoConfiguration implements EnvironmentPostProcessor {
 
